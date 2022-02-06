@@ -1,11 +1,14 @@
 package com.devsuperior.dslearnbds.entites;
 
+import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,4 +24,8 @@ public class Course implements Serializable {
     private String name;
     private String imgUri;
     private String imgGrayUri;
+
+    @Setter(value = AccessLevel.NONE)
+    @OneToMany(mappedBy = "course")
+    private List<Offer> offers = new ArrayList<>();
 }

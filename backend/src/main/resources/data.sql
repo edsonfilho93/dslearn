@@ -18,3 +18,14 @@ INSERT INTO tb_course (name, img_uri, img_gray_uri)
 VALUES ('BOOTCAMP HTML',
         'https://c.pxhere.com/images/07/b2/f8ed07d6f1a9c740e7703cbb99ee-1443423.jpg!d',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT46CMo2HgLUdALfI7LMXD4PxjLn5WoyPponSGR2YAjopfYxzTDHcwpBsq_r4shtPcFcVw&usqp=CAU');
+
+INSERT INTO tb_offer(edition, start_moment, end_moment, course_id)
+VALUES ('1.0',
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        TIMESTAMP WITH TIME ZONE '2022-01-10T20:50:07.12345Z',
+        1);
+INSERT INTO tb_offer(edition, start_moment, end_moment, course_id)
+VALUES ('2.0',
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        TIMESTAMP WITH TIME ZONE '2022-01-10T20:50:07.12345Z',
+        1);
