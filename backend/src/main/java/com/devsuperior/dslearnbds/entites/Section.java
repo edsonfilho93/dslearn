@@ -1,20 +1,19 @@
 package com.devsuperior.dslearnbds.entites;
 
 import com.devsuperior.dslearnbds.enums.ResourceType;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "tb_resource")
-public class Resource implements Serializable {
+@Table(name = "tb_section")
+public class Section implements Serializable {
     private static final long serialVersionId = 1L;
 
     @Id
@@ -26,15 +25,14 @@ public class Resource implements Serializable {
     private String description;
     private String imgUri;
     private String position;
-    private ResourceType type;
 //    private String externalLink;
 
     @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
+    @JoinColumn(name = "resource_id")
+    private Resource resource;
 
-    @Setter(AccessLevel.NONE)
-    @OneToMany(mappedBy = "resource")
-    private List<Section> sections = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "prerequesite_id")
+    private Section Prerequesite;
 
 }

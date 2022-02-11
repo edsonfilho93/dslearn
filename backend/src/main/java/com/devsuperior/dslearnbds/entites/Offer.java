@@ -29,7 +29,7 @@ public class Offer implements Serializable {
     @JoinColumn(name = "course_id")
     private Course course;
 
-    @OneToMany(mappedBy = "offer")
     @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "offer")
     private List<Resource> resources = new ArrayList<>();
 }
