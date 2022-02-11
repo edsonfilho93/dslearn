@@ -65,3 +65,10 @@ VALUES ('Lives',
         'https://c.pxhere.com/images/07/b2/f8ed07d6f1a9c740e7703cbb99ee-1443423.jpg!d',
         0,
         1);
+
+INSERT INTO tb_notification(text, moment, read, route, user_id)
+VALUES ('Matrícula realizada com sucesso',
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        false,
+        'nao sei o q',
+        1);
