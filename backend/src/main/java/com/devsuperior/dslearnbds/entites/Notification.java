@@ -1,6 +1,5 @@
 package com.devsuperior.dslearnbds.entites;
 
-import com.devsuperior.dslearnbds.enums.ResourceType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
