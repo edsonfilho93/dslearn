@@ -90,3 +90,26 @@ VALUES ('Capítulo 3',
         'https://c.pxhere.com/images/07/b2/f8ed07d6f1a9c740e7703cbb99ee-1443423.jpg!d',
         1,
         2);
+
+
+INSERT INTO tb_enrollment(available, only_update, enroll_moment, refund_moment, offer_id, user_id)
+VALUES (true,
+        false,
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        null,
+        1,
+        1);
+INSERT INTO tb_enrollment(available, only_update, enroll_moment, refund_moment, offer_id, user_id)
+VALUES (true,
+        true,
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        TIMESTAMP WITH TIME ZONE '2022-01-10T20:50:07.12345Z',
+        2,
+        2);
+INSERT INTO tb_enrollment(available, only_update, enroll_moment, refund_moment, offer_id, user_id)
+VALUES (true,
+        true,
+        TIMESTAMP WITH TIME ZONE '2021-01-10T20:50:07.12345Z',
+        TIMESTAMP WITH TIME ZONE '2022-01-10T20:50:07.12345Z',
+        2,
+        1);
