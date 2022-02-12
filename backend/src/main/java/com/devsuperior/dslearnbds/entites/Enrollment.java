@@ -3,11 +3,12 @@ package com.devsuperior.dslearnbds.entites;
 import com.devsuperior.dslearnbds.entites.pk.EnrollmentPK;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
