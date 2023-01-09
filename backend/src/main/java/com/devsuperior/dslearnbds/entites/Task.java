@@ -2,7 +2,6 @@ package com.devsuperior.dslearnbds.entites;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
