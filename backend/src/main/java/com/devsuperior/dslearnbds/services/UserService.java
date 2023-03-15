@@ -3,7 +3,6 @@ package com.devsuperior.dslearnbds.services;
 import com.devsuperior.dslearnbds.dto.UserDTO;
 import com.devsuperior.dslearnbds.dto.UserInsertDTO;
 import com.devsuperior.dslearnbds.dto.UserUpdateDTO;
-import com.devsuperior.dslearnbds.entites.Role;
 import com.devsuperior.dslearnbds.entites.User;
 import com.devsuperior.dslearnbds.repositories.RoleRepository;
 import com.devsuperior.dslearnbds.repositories.UserRepository;
@@ -40,6 +39,9 @@ public class UserService implements UserDetailsService {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private AuthService authService;
+
     @Transactional(readOnly = true)
     public Page<UserDTO> findAll(Pageable pageable) {
         Page<User> list = repository.findAll(pageable);
@@ -48,6 +50,7 @@ public class UserService implements UserDetailsService {
 
     @Transactional(readOnly = true)
     public UserDTO findById(Long id) {
+        authService.validateSelfOrAdmin(id);
         User entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Entidade não encontrada"));
         return new UserDTO(entity);
@@ -89,12 +92,12 @@ public class UserService implements UserDetailsService {
         entity.setName(dto.getName());
         entity.setEmail(dto.getEmail());
 
-        entity.getRoles().clear();
-
-        dto.getRoles().forEach(roleDTO -> {
-            Role role = roleRepository.getOne(roleDTO.getId());
-            entity.getRoles().add(role);
-        });
+//        entity.getRoles().clear();
+//
+//        dto.getRoles().forEach(roleDTO -> {
+//            Role role = roleRepository.getOne(roleDTO.getId());
+//            entity.getRoles().add(role);
+//        });
     }
 
     @Override

@@ -90,4 +90,13 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public boolean hasRole(String role) {
+        for (Role obj : roles) {
+            if (obj.getAuthority().equals(role))
+                return true;
+        }
+
+        return false;
+    }
 }

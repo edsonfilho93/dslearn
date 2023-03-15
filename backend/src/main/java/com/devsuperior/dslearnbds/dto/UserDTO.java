@@ -6,8 +6,6 @@ import com.devsuperior.dslearnbds.entites.User;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 public class UserDTO implements Serializable {
     private static final long SerialVersionUID = 1L;
@@ -19,7 +17,7 @@ public class UserDTO implements Serializable {
     @Email(message = "Informar um email válido!")
     private String email;
 
-    private Set<RoleDTO> roles = new HashSet<>();
+//    private Set<RoleDTO> roles = new HashSet<>();
 
     public UserDTO() {
     }
@@ -32,10 +30,10 @@ public class UserDTO implements Serializable {
 
     public UserDTO(User entity) {
         this.id = entity.getId();
-        this.name = name;
+        this.name = entity.getName();
         this.email = entity.getEmail();
 
-        entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
+//        entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
     }
 
     public Long getId() {
@@ -50,7 +48,7 @@ public class UserDTO implements Serializable {
         return name;
     }
 
-    public void setName(String lastName) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -62,7 +60,7 @@ public class UserDTO implements Serializable {
         this.email = email;
     }
 
-    public Set<RoleDTO> getRoles() {
-        return roles;
-    }
+//    public Set<RoleDTO> getRoles() {
+//        return roles;
+//    }
 }
